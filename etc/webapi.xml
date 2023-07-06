@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © TEVTEX. All rights reserved.
+ * See LICENSE.txt for license details.
+ * https://www.tevtex.com
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/tevtex/cache/enable" method="PUT">
+        <service class="Tevtex\CacheManagement\Api\CacheToggleInterface" method="enable"/>
+        <resources>
+            <resource ref="Magento_Backend::cache"/>
+        </resources>
+    </route>
+    <route url="/V1/tevtex/cache/disable" method="PUT">
+        <service class="Tevtex\CacheManagement\Api\CacheToggleInterface" method="disable"/>
+        <resources>
+            <resource ref="Magento_Backend::cache"/>
+        </resources>
+    </route>
+    <route url="/V1/tevtex/cache/clean" method="POST">
+        <service class="Tevtex\CacheManagement\Api\CachePurgeInterface" method="clean"/>
+        <resources>
+            <resource ref="Magento_Backend::cache"/>
+        </resources>
+    </route>
+    <route url="/V1/tevtex/cache/flush" method="POST">
+        <service class="Tevtex\CacheManagement\Api\CachePurgeInterface" method="flush"/>
+        <resources>
+            <resource ref="Magento_Backend::cache"/>
+        </resources>
+    </route>
+</routes>

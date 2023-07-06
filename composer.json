@@ -1,0 +1,23 @@
+{
+    "name": "tevtex/module-cachemanagement",
+    "description": "A Magento 2 module providing Adobe Commerce's cache management via API.",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Ahmad Farzan",
+            "email": "a.farzan@tevtex.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "version": "1.0.0",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Tevtex\\CacheManagement\\": ""
+        }
+    }
+}

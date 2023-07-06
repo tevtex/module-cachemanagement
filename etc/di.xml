@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © TEVTEX. All rights reserved.
+ * See LICENSE.txt for license details.
+ * https://www.tevtex.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Tevtex\CacheManagement\Api\CachePurgeInterface" type="Tevtex\CacheManagement\Model\CachePurge"/>
+    <preference for="Tevtex\CacheManagement\Api\CacheToggleInterface" type="Tevtex\CacheManagement\Model\CacheToggle"/>
+    <preference for="Tevtex\CacheManagement\Api\CacheTypesInterface" type="Tevtex\CacheManagement\Model\CacheTypes"/>
+    <preference for="Tevtex\CacheManagement\Api\ConfigInterface" type="Tevtex\CacheManagement\Model\Config"/>
+    <preference for="Tevtex\CacheManagement\Api\Data\CachePurgeResponseInterface" type="Tevtex\CacheManagement\Model\Data\CachePurgeResponse"/>
+    <preference for="Tevtex\CacheManagement\Api\Data\CacheToggleResponseInterface" type="Tevtex\CacheManagement\Model\Data\CacheToggleResponse"/>
+</config>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © TEVTEX. All rights reserved.
+ * See LICENSE.txt for license details.
+ * https://www.tevtex.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tevtex" translate="label" sortOrder="100">
+            <label>TEVTEX</label>
+        </tab>
+        <section id="tevtex_cachemanagement" translate="label" sortOrder="100" showInDefault="1">
+            <label>Cache Management</label>
+            <tab>tevtex</tab>
+            <resource>Magento_Backend::cache</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Cache Management</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

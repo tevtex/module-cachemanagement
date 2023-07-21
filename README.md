@@ -2,22 +2,17 @@
 
 > Module to enable cache management in Magento 2 using API.
 
-It adds the following API endpoints to your magento application:
+It adds the following API endpoints to your Magento application:
 
 
 ## API Endpoints
 
-> Enable all cache types
+> Enable all or specific cache types
  
 ```
 PUT /V1/tevtex/cache/enable
-```
 
-> Enable specific cache type
-
-```
-PUT /V1/tevtex/cache/enable
-
+(Optionally pass the cache types to enable, defaults to all cache types)
 {
   "cache_types":[
     "eav",
@@ -30,13 +25,8 @@ PUT /V1/tevtex/cache/enable
 
 ```
 PUT /V1/tevtex/cache/disable
-```
 
-> Disable specific cache type
-
-```
-PUT /V1/tevtex/cache/disable
-
+(Optionally pass the cache types to disable, defaults to all cache types)
 {
   "cache_types":[
     "eav",
@@ -45,37 +35,27 @@ PUT /V1/tevtex/cache/disable
 }
 ```
 
-> Clean all cache types.
-
-```
-POST /V1/tevtex/cache/clean
-```
-
-> Clean specific cache types.
+> Clean all or specific cache types.
 
 ```
 POST /V1/tevtex/cache/clean
 
+(Optionally pass the cache types to clean, defaults to all cache types)
 {
-    "cache_types":[
-        "eav",
-        "config",
-        ...
-    ]
+  "cache_types":[
+    "eav",
+    "config",
+    ...
+  ]
 }
 ```
 
-> Flush all cache types.
+> Flush all or specific cache types.
 
-```bash
-POST /V1/tevtex/cache/flush
 ```
-
-> Flush specific cache types.
-
-```bash
 POST /V1/tevtex/cache/flush
 
+(Optionally pass the cache types to flush, defaults to all cache types)
 {
     "cache_types":[
         "eav",
@@ -114,7 +94,7 @@ bin/magento setup:upgrade
 Stores > Configuration > TEVTEX > Cache Management > General > Enabled
 ```
 
-![Cache Management](./docs/images/tevtex_cachemanagement_configuration.png)
+![Cache Management](./.github/images/cache-management.png)
 
 ### Using Command Line
 
@@ -124,12 +104,10 @@ Stores > Configuration > TEVTEX > Cache Management > General > Enabled
 bin/magento config:set tevtex_cachemanagement/general/enabled 1
 ```
 
-## License
+## Contribute
 
-This project is licensed under the GPL-3.0 License - see
-the [LICENSE.txt](./LICENSE.txt) file
-for details.
+Feel free to submit pull requests, create issues or spread the word.
 
-## Authors
+## License 
 
-Ahmad Farzan - <a.farzan@tevtex.com>.
+MIT &copy; [Ahmad Farzan](https://github.com/farzanahmad)

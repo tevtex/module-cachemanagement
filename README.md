@@ -1,15 +1,95 @@
-# Tevtex Magento 2 Cache Management Module
+# Magento 2 Cache Management API
 
-The `tevtex/module-cachemanagement` is a Adobe Commerce module that provides
-functionalities for managing Adobe Commerce's cache via API calls.
+> Module to enable cache management in Magento 2 using API.
 
-## Features
+It adds the following API endpoints to your magento application:
 
-- Enable, disable, clean, and flush Adobe Commerce cache via API.
+
+## API Endpoints
+
+> Enable all cache types
+ 
+```
+PUT /V1/tevtex/cache/enable
+```
+
+> Enable specific cache type
+
+```
+PUT /V1/tevtex/cache/enable
+
+{
+  "cache_types":[
+    "eav",
+    "config",
+  ]
+}
+```
+
+> Disable all cache types
+
+```
+PUT /V1/tevtex/cache/disable
+```
+
+> Disable specific cache type
+
+```
+PUT /V1/tevtex/cache/disable
+
+{
+  "cache_types":[
+    "eav",
+    "config",
+  ]
+}
+```
+
+> Clean all cache types.
+
+```
+POST /V1/tevtex/cache/clean
+```
+
+> Clean specific cache types.
+
+```
+POST /V1/tevtex/cache/clean
+
+{
+    "cache_types":[
+        "eav",
+        "config",
+        ...
+    ]
+}
+```
+
+> Flush all cache types.
+
+```bash
+POST /V1/tevtex/cache/flush
+```
+
+> Flush specific cache types.
+
+```bash
+POST /V1/tevtex/cache/flush
+
+{
+    "cache_types":[
+        "eav",
+        "config",
+        ...
+    ]
+}
+```
+
+**Note**: The API endpoints are secured and require the `Magento_Backend::cache` resource access right for authorization.
 
 ## Installation
 
-You can install this package via Composer:
+> Simply run the following command to install the module using `composer`
 
 ```bash
 composer require tevtex/module-cachemanagement
@@ -17,123 +97,32 @@ composer require tevtex/module-cachemanagement
 
 ## Usage
 
-### Enable Module
+> Enable the module using following command:
 
 ```bash
 bin/magento module:enable Tevtex_CacheManagement
 bin/magento setup:upgrade
 ```
 
-### Enable Configuration
+> Enable the configuration using one of the following ways:
 
-#### via Admin Panel
+### Using Admin Panel
+
+> Visit the following location in admin panel and enable the module
 
 ```bash
 Stores > Configuration > TEVTEX > Cache Management > General > Enabled
 ```
 
-![TEVTEX Cache Management](./docs/images/tevtex_cachemanagement_configuration.png)
+![Cache Management](./docs/images/tevtex_cachemanagement_configuration.png)
 
-#### via Command Line:
+### Using Command Line
+
+> Run the following command to enable the module
 
 ```bash
 bin/magento config:set tevtex_cachemanagement/general/enabled 1
 ```
-
-### API Endpoints
-
-#### Enable Cache
-
-Enable all cache types.
-
-```bash
-PUT /V1/tevtex/cache/enable
-```
-
-Enable specific cache types.
-
-```bash
-PUT /V1/tevtex/cache/enable
-
-{
-    "cache_types":[
-        "eav",
-        "config",
-        ...
-    ]
-}
-```
-
-#### Disable Cache
-
-Disable all cache types.
-
-```bash
-PUT /V1/tevtex/cache/disable
-```
-
-Disable specific cache types.
-
-```bash 
-PUT /V1/tevtex/cache/disable
-
-{
-    "cache_types":[
-        "eav",
-        "config",
-        ...
-    ]
-}
-```
-
-#### Clean Cache
-
-Clean all cache types.
-
-```bash
-POST /V1/tevtex/cache/clean
-```
-
-Clean specific cache types.
-
-```bash
-POST /V1/tevtex/cache/clean
-
-{
-    "cache_types":[
-        "eav",
-        "config",
-        ...
-    ]
-}
-```
-
-#### Flush Cache
-
-Flush all cache types.
-
-```bash
-POST /V1/tevtex/cache/flush
-```
-
-Flush specific cache types.
-
-```bash
-POST /V1/tevtex/cache/flush
-
-{
-    "cache_types":[
-        "eav",
-        "config",
-        ...
-    ]
-}
-```
-
-## Security
-
-The API endpoints are secured and require the `Magento_Backend::cache` resource
-access right for authorization.
 
 ## License
 

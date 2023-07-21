@@ -94,7 +94,7 @@ bin/magento setup:upgrade
 Stores > Configuration > TEVTEX > Cache Management > General > Enabled
 ```
 
-![Cache Management](./.github/images/cache-management.png)
+![Cache Management](./.github/images/config.png)
 
 ### Using Command Line
 
